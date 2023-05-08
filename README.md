@@ -6,23 +6,23 @@ Mir UI is a desktop application that allows you to securely download, configure 
 
 ## Development
 
-This repo is the hosting application for [Grid UI](https://github.com/MIRChain/mir-grid-ui).
+This repo is the hosting application for [UI](https://github.com/MIRChain/mir-control-center-ui).
 
 ### Quick Start
 
-Install and run Grid UI:
+Install and run UI:
 
 ```
-git clone https://github.com/MIRChain/mir-grid-ui.git
-cd mir-grid-ui
+git clone https://github.com/MIRChain/mir-control-center-ui.git
+cd mir-control-center-ui
 yarn && yarn start
 ```
 
 Install and run Grid:
 
 ```
-git clone https://github.com/MIRChain/mir-grid.git
-cd mir-grid
+git clone https://github.com/MIRChain/mir-control-center.git
+cd mir-control-center
 yarn && yarn start:dev
 ```
 
@@ -42,7 +42,7 @@ More namespaces will be added over time and listed here. We would appreciate con
 
 `yarn start:prod`
 
-In production mode, a bundled app can be loaded from either `fs` or a remote location such as Mir UI's GitHub releases.
+In production mode, a bundled app can be loaded from either `fs` or a remote location such as Mir-Control-Center UI's GitHub releases.
 
 
 ### Build distribution
@@ -60,7 +60,7 @@ docker run --rm -ti \
  -v ${PWD##*/}-node-modules:/project/node_modules \
  -v ~/.cache/electron:/root/.cache/electron \
  -v ~/.cache/electron-builder:/root/.cache/electron-builder \
- electronuserland/builder:wine-05.18
+ electronuserland/builder:wine
 ```
 
 2. Type in `yarn && yarn dist`
