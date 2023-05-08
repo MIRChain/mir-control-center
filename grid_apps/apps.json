@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Dev",
+    "description": "Develop your own Grid applications.",
+    "lastUpdated": "2019-05-19T03:24:00",
+    "screenshot": "https://source.unsplash.com/Ek9Znm8lQ1U/800x450",
+    "url": "http://localhost:3000"
+  },
+  {
+    "name": "Remix",
+    "description": "Solidity IDE by Remix.",
+    "screenshot": "https://theethereum.wiki/w/images/thumb/7/76/RemixMain.png/1024px-RemixMain.png",
+    "url": "package://github.com/ethereum/remix-ide",
+    "ignore": "package://24f0c0e4272ca1bbb7e32fe1d8bf87367b169f74415e48eb9f2ca4552759ef5c"
+  }
+]

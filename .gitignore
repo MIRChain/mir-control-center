@@ -1,0 +1,34 @@
+node_modules
+.DS_Store
+Thumbs.db
+*.log
+
+/dist
+/temp
+
+# the binaries that electron-builder creates
+release
+
+# ignore everything in 'app' folder what had been generated from 'src' folder
+/app/app.js
+/app/background.js
+/app/**/*.map
+
+# the app.asar that is package with this shell
+*.asar
+*.zip
+
+# contains the GH_TOKEN access token variable for auto-publishing
+.env
+
+# Vim swap files
+*.swp
+
+.shell.config.js
+.python-version
+
+ethereum_clients/*_bin
+*.tgz*
+*.zip*
+
+shipped-grid-ui

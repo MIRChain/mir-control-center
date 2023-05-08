@@ -1,0 +1,118 @@
+{
+  "name": "mir-control-center",
+  "version": "0.1.4",
+  "description": "UI for managing a MIR node",
+  "main": "nano.js",
+  "homepage": "https://mirchain.github.io/MIR",
+  "author": "Grid Team <grid@ethereum.org> && Mir team (pavelkrolevets@gmail.com)",
+  "license": "ISC",
+  "repository": "https://github.com/MIRChain/mir-control-center",
+  "scripts": {
+    "start": "yarn start:dev",
+    "start:dev": "cross-env NODE_ENV=development electron .",
+    "start:dev:verbose": "cross-env NODE_ENV=development DEBUG=geth-js electron .",
+    "start:prod": "cross-env NODE_ENV=production electron .",
+    "test:mocha": "cross-env NODE_ENV=test mocha ./test",
+    "test:e2e": "cross-env NODE_ENV=development ava ./test/e2e --verbose -s",
+    "test:integration:watch": "cross-env NODE_ENV=test mocha ./test/integration --watch",
+    "test:integration:parity": "cross-env NODE_ENV=test mocha ./test/integration/parity.test.js",
+    "test:integration:geth": "cross-env NODE_ENV=test mocha ./test/integration/geth.test.js",
+    "prepare-release": "node ./scripts/copyApp.js",
+    "dist-linux": "yarn run prepare-release && electron-builder --linux",
+    "dist-win": "yarn run prepare-release && electron-builder --win",
+    "dist-mac": "yarn run prepare-release && electron-builder --mac"
+  },
+  "dependencies": {
+    "@pavelkrolevets/app-manager": "https://github.com/MIRChain/app-manager.git#dev",
+    "auto-launch": "^5.0.5",
+    "debug": "^4.1.1",
+    "menubar": "^6.0.7",
+    "xterm": "^3.14.4"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "electron": "6.0.9",
+    "electron-builder": "23.0.2",
+    "electron-rebuild": "^1.8.6",
+    "env-cmd": "^8.0.2",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
+    "mocha": "^5.2.0",
+    "prettier": "^1.16.4",
+    "ps-list": "^6.3.0",
+    "rimraf": "^2.6.3",
+    "spectron": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css}": [
+      "prettier --no-semi --single-quote --write",
+      "git add"
+    ]
+  },
+  "build": {
+    "productName": "MIRUI",
+    "appId": "org.ethereum.grid",
+    "asar": false,
+    "files": [
+      "index.js",
+      "nano.js",
+      "electron-shell.js",
+      "electron-zip-support.js",
+      "preload.js",
+      "preload-webview.js",
+      "WindowManager.js",
+      "build/**/*.png",
+      "build/**/*.ico",
+      "ui/**/*",
+      "public/error.html",
+      "Menu.js",
+      "Config.js",
+      "Rpc.js",
+      "ethereum_clients/**/*.js",
+      "ethereum_clients/**/*.json",
+      "grid_apps/**/*.js",
+      "grid_apps/**/*.json",
+      "utils/**/*.js",
+      "*.asar",
+      "*.zip",
+      "shipped-grid-ui/**/*.zip"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "zip",
+        "dmg"
+      ],
+      "darkModeSupport": true
+    },
+    "nsis": {
+      "createDesktopShortcut": "always"
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "WebBrowser"
+    },
+    "directories": {
+      "output": "release"
+    }
+  }
+}
