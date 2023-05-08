@@ -1,5 +1,5 @@
 
-# Mir UI
+# Mir Control Center
 
 Mir UI is a desktop application that allows you to securely download, configure and use various clients and tools in the MIR ecosystem. 
 
@@ -18,7 +18,7 @@ cd mir-control-center-ui
 yarn && yarn start
 ```
 
-Install and run Grid:
+Install and run Control-Center:
 
 ```
 git clone https://github.com/MIRChain/mir-control-center.git
