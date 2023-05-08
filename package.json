@@ -58,8 +58,8 @@
     ]
   },
   "build": {
-    "productName": "MIRUI",
-    "appId": "org.ethereum.grid",
+    "productName": "MIR Control Center",
+    "appId": "Control Center",
     "asar": false,
     "files": [
       "index.js",

@@ -3,7 +3,7 @@ const { dialog } = require('electron').remote
 const AutoLaunch = require('auto-launch')
 
 const gridAutoLauncher = new AutoLaunch({
-  name: 'MIRUI'
+  name: 'MIR Control Center'
   // Unsure of linux distros behavior with menubar
   // so for now we will always show on launch
   // isHidden: true

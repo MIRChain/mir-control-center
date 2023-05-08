@@ -21,7 +21,7 @@ const GRID_UI_CACHE = getCachePath('grid-ui')
 // console.log('grid ui cache created at', GRID_UI_CACHE)
 
 const gridUiManager = new PackageManager({
-  repository: 'https://github.com/MIRChain/mir-grid-ui',
+  repository: 'https://github.com/MIRChain/mir-control-center-ui',
   auto: true, // this will automatically check for new packages...
   intervalMins: 60, // ...every 60 minutes. the first check will be after 1 minute though
   cacheDir: GRID_UI_CACHE, // updates are automatically downloaded to this path
@@ -48,7 +48,7 @@ const getGridUiUrl = async () => {
   } catch (error) {
     console.log('WARNING: package.json parse error', error)
   }
-  const HOT_LOAD_URL = `package://github.com/MIRChain/mir-grid-ui?version=${version}`
+  const HOT_LOAD_URL = `package://github.com/MIRChain/mir-control-center-ui?version=${version}`
   // const HOT_LOAD_URL = `package://github.com/ethereum/grid-ui`
   if (is.dev()) {
     const PORT = '3080'
@@ -244,7 +244,7 @@ class AppManager extends EventEmitter {
         appUrl,
         {
           backgroundColor: component === 'terminal' ? '#1E1E1E' : '#202225',
-          title: 'MIRUI'
+          title: 'MIR Control Center'
         },
         { scope }
       )

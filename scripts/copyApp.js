@@ -7,7 +7,7 @@ const { AppManager } = require('@pavelkrolevets/app-manager')
 const GRID_UI_CACHE = getShippedGridUiPath()
 
 const updater = new AppManager({
-  repository: 'https://github.com/MIRChain/mir-grid-ui',
+  repository: 'https://github.com/MIRChain/mir-control-center-ui',
   auto: false,
   cacheDir: GRID_UI_CACHE
 })

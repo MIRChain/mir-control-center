@@ -114,7 +114,7 @@ const init = function() {
         webPreferences: {
           preload: preloadPath
         },
-        title: 'MIRUI Nano'
+        title: 'MIR Control Center'
       },
       index: makePath(`${__dirname}/ui/nano.html`),
       showDockIcon: true,
