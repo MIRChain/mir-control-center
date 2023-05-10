@@ -80,12 +80,32 @@ module.exports = {
           value: 'rinkery',
           label: 'Rinkeby (testnet: secp256k1, proof-of-authority)',
           flag: '--crypto nist --rinkeby'
+        },
+        {
+          value: 'custom',
+          label: 'Custom network',
+          flag: ''
         }
         // { value: 'goerli', label: 'Görli (testnet)', flag: '--goerli' },
         // { value: 'dev', label: 'Local (dev mode)', flag: '--dev' }
       ]
     },
-
+    {
+      id: 'networkId',
+      label: 'Network ID',
+      flag: '--networkId %s',
+      default: '777'
+    },
+    {
+      id: 'cryptoType',
+      default: 'gost',
+      label: 'Crytography Type',
+      options: [
+        { value: 'gost', label: 'GOST' },
+        { value: 'nist', label: 'NIST' }
+      ],
+      flag: '--crypto %s'
+    },
     {
       id: 'syncMode',
       default: 'full',
@@ -96,16 +116,12 @@ module.exports = {
       ],
       flag: '--syncmode %s'
     },
-    // {
-    //   id: 'cryptoType',
-    //   default: 'gost',
-    //   label: 'Crytography Type',
-    //   options: [
-    //     { value: 'gost', label: 'GOST' },
-    //     { value: 'nist', label: 'NIST' }
-    //   ],
-    //   flag: '--crypto %s'
-    // },
+    {
+      id: 'identity',
+      label: 'Custom node name',
+      flag: '--identity %s',
+      default: 'Space_Monkey_1'
+    },
     {
       id: 'dataDir',
       default: '',
@@ -235,10 +251,7 @@ module.exports = {
       label: 'Verbosity',
       default: 3,
       options: [
-        { value: 0, label: '0 = Silent', flag: '--verbosity=0' },
-        { value: 1, label: '1 = Error', flag: '--verbosity=1' },
-        { value: 2, label: '2 = Warn', flag: '--verbosity=2' },
-        { value: 3, label: '3 = Info', flag: '' }, // Mir's default
+        { value: 3, label: '3 = Info', flag: '--verbosity=3' }, // Mir's default
         { value: 4, label: '4 = Debug', flag: '--verbosity=4' },
         { value: 5, label: '5 = Detail', flag: '--verbosity=5' }
       ]
