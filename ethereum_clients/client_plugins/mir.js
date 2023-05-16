@@ -93,8 +93,9 @@ module.exports = {
     {
       id: 'networkId',
       label: 'Network ID',
-      flag: '--networkId %s',
-      default: '777'
+      flag: '--networkid %s',
+      default: '',
+      ignoreIfEmpty: true
     },
     {
       id: 'cryptoType',
@@ -200,9 +201,9 @@ module.exports = {
     {
       id: 'etherbase',
       label: 'Coinbase',
-      default: '0x0000000000000000000000000000000000000000',
-      type: 'textinput',
-      flag: '--miner.etherbase %s'
+      default: '',
+      flag: '--miner.etherbase %s',
+      ignoreIfEmpty: true
     },
     {
       id: 'minerThreads',
