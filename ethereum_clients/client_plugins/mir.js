@@ -225,6 +225,13 @@ module.exports = {
         { value: 'none', label: 'none', flag: '' }
       ]
     },
+    {
+      id: 'bootnodes',
+      label: 'Bootnodes',
+      flag: '--bootnodes %s',
+      default: '',
+      ignoreIfEmpty: true
+    },
     // {
     //   id: 'signer',
     //   label: 'Signer',
