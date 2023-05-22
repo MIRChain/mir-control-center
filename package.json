@@ -1,6 +1,6 @@
 {
   "name": "mir-control-center",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "UI for managing a MIR node",
   "main": "nano.js",
   "homepage": "https://mirchain.github.io/MIR",
